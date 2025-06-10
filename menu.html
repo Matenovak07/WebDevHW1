@@ -5,75 +5,126 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Menu - Burger Fantasy</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Mobile menu */
+    .mobile-menu {
+      display: none;
+    }
+    
+    @media (max-width: 768px) {
+      .mobile-menu.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to right, #1e40af, #3730a3);
+        padding: 1rem;
+        z-index: 40;
+      }
+      
+      .mobile-menu a {
+        padding: 0.75rem;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+      }
+      
+      .menu-item {
+        min-height: 120px;
+      }
+      
+      .menu-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+  </style>
 </head>
 <body class="bg-gray-900 text-white font-sans">
 
-  <!-- Header -->
+  <!-- Header with Hamburger Menu -->
   <header class="bg-gradient-to-r from-blue-700 to-indigo-800 shadow sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
       <div class="text-2xl font-bold tracking-wide">Burger Fantasy</div>
+      
+      <!-- Desktop Navigation -->
       <nav class="space-x-6 hidden md:flex text-sm">
         <a href="index.html" class="hover:text-blue-300 transition">Home</a>
         <a href="menu.html" class="text-blue-300 font-semibold">Menu</a>
         <a href="gallery.html" class="hover:text-blue-300 transition">Gallery</a>
         <a href="contact.html" class="hover:text-blue-300 transition">Contact & About</a>
       </nav>
+      
+      <!-- Hamburger Button-->
+      <button class="md:hidden text-white focus:outline-none" id="menuButton" aria-label="Toggle menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html" class="hover:text-blue-300 transition">Home</a>
+      <a href="menu.html" class="text-blue-300 font-semibold">Menu</a>
+      <a href="gallery.html" class="hover:text-blue-300 transition">Gallery</a>
+      <a href="contact.html" class="hover:text-blue-300 transition">Contact & About</a>
     </div>
   </header>
 
   <!-- Menu Section -->
-  <section class="py-16 px-4 bg-gray-900">
+  <section class="py-12 md:py-16 px-4 bg-gray-900">
     <div class="max-w-6xl mx-auto">
-      <h2 class="text-4xl font-bold text-center text-blue-300 mb-12">Our Menu</h2>
-      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        <div class="bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-blue-300 mb-8 md:mb-12">Our Menu</h2>
+      <div class="menu-grid grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <!-- Menu Items -->
+        <div class="menu-item bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500">
           <h3 class="text-xl font-semibold text-white mb-2">Grilled Salmon</h3>
           <p class="text-blue-300 text-lg">$18.99</p>
         </div>
-        <div class="bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500">
+        <div class="menu-item bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500">
           <h3 class="text-xl font-semibold text-white mb-2">Beef Burger</h3>
           <p class="text-blue-300 text-lg">$12.49</p>
         </div>
-        <div class="bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500">
+        <div class="menu-item bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500">
           <h3 class="text-xl font-semibold text-white mb-2">Caesar Salad</h3>
           <p class="text-blue-300 text-lg">$9.99</p>
         </div>
-        <div class="bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500">
+        <div class="menu-item bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500">
           <h3 class="text-xl font-semibold text-white mb-2">Spaghetti Carbonara</h3>
           <p class="text-blue-300 text-lg">$14.99</p>
         </div>
-        <div class="bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500">
+        <div class="menu-item bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500">
           <h3 class="text-xl font-semibold text-white mb-2">Chicken Tenders</h3>
           <p class="text-blue-300 text-lg">$10.49</p>
         </div>
-        <div class="bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500">
+        <div class="menu-item bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500">
           <h3 class="text-xl font-semibold text-white mb-2">Veggie Wrap</h3>
           <p class="text-blue-300 text-lg">$8.99</p>
         </div>
-        <div class="bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500">
-            <h3 class="text-xl font-semibold text-white mb-2">Double Cheeseburger</h3>
-            <p class="text-blue-300 text-lg">$13.99</p>
-          </div>
-          <div class="bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500">
-            <h3 class="text-xl font-semibold text-white mb-2">Bacon Avocado Burger</h3>
-            <p class="text-blue-300 text-lg">$14.49</p>
-          </div>
-          <div class="bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500">
-            <h3 class="text-xl font-semibold text-white mb-2">Loaded Fries</h3>
-            <p class="text-blue-300 text-lg">$6.99</p>
-          </div>
-          <div class="bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500">
-            <h3 class="text-xl font-semibold text-white mb-2">Onion Rings</h3>
-            <p class="text-blue-300 text-lg">$5.49</p>
-          </div>
-          <div class="bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500">
-            <h3 class="text-xl font-semibold text-white mb-2">Milkshake (Chocolate/Vanilla)</h3>
-            <p class="text-blue-300 text-lg">$4.99</p>
-          </div>
-          <div class="bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500">
-            <h3 class="text-xl font-semibold text-white mb-2">Classic Hot Dog</h3>
-            <p class="text-blue-300 text-lg">$7.49</p>
-          </div>
+        <div class="menu-item bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500">
+          <h3 class="text-xl font-semibold text-white mb-2">Double Cheeseburger</h3>
+          <p class="text-blue-300 text-lg">$13.99</p>
+        </div>
+        <div class="menu-item bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500">
+          <h3 class="text-xl font-semibold text-white mb-2">Bacon Avocado Burger</h3>
+          <p class="text-blue-300 text-lg">$14.49</p>
+        </div>
+        <div class="menu-item bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500">
+          <h3 class="text-xl font-semibold text-white mb-2">Loaded Fries</h3>
+          <p class="text-blue-300 text-lg">$6.99</p>
+        </div>
+        <div class="menu-item bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500">
+          <h3 class="text-xl font-semibold text-white mb-2">Onion Rings</h3>
+          <p class="text-blue-300 text-lg">$5.49</p>
+        </div>
+        <div class="menu-item bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500">
+          <h3 class="text-xl font-semibold text-white mb-2">Milkshake (Chocolate/Vanilla)</h3>
+          <p class="text-blue-300 text-lg">$4.99</p>
+        </div>
+        <div class="menu-item bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500">
+          <h3 class="text-xl font-semibold text-white mb-2">Classic Hot Dog</h3>
+          <p class="text-blue-300 text-lg">$7.49</p>
+        </div>
       </div>
     </div>
   </section>
@@ -89,5 +140,20 @@
     <p class="text-xs mt-1">&copy; 2025 Burger Fantasy. All rights reserved.</p>
   </footer>
 
+  <!-- Mobile Menu Script -->
+  <script>
+    const menuButton = document.getElementById('menuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    menuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+    });
+    
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+      });
+    });
+  </script>
 </body>
 </html>
