@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Burger Fantasy</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white font-sans">
+
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-blue-700 to-indigo-800 shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="text-2xl font-bold tracking-wide">Burger Fantasy</div>
+      <nav class="space-x-6 hidden md:flex text-sm">
+        <a href="index.html" class="hover:text-blue-300 transition">Home</a>
+        <a href="menu.html" class="hover:text-blue-300 transition">Menu</a>
+        <a href="gallery.html" class="hover:text-blue-300 transition">Gallery</a>
+        <a href="contact.html" class="text-blue-300 font-semibold">Contact & About</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contact Section -->
+  <section class="py-16 px-4 bg-gray-900">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-bold text-center text-blue-300 mb-10">Get In Touch</h2>
+      <div class="grid md:grid-cols-2 gap-10">
+        
+        <!-- Google Map -->
+        <iframe 
+          class="w-full h-96 rounded-xl shadow-lg border-4 border-blue-500"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509374!2d144.95373631575755!3d-37.81627974201912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d43f4aaefc3%3A0xf577ec3f00c28d5!2sFlinders%20St%20Station!5e0!3m2!1sen!2sau!4v1614641864571!5m2!1sen!2sau" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
+
+        <!-- Contact Form -->
+        <form class="bg-gray-800 p-6 rounded-xl shadow-lg space-y-4 border border-blue-500">
+          <input type="text" placeholder="Name" required
+            class="w-full p-3 rounded bg-gray-900 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          <input type="email" placeholder="Email" required
+            class="w-full p-3 rounded bg-gray-900 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          <textarea rows="5" placeholder="Message" required
+            class="w-full p-3 rounded bg-gray-900 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+          <button type="submit"
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded font-semibold transition duration-200">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Me Section -->
+  <section class="py-16 bg-gradient-to-r from-indigo-900 to-gray-900 text-center">
+    <div class="max-w-3xl mx-auto px-4">
+      <h3 class="text-3xl font-bold text-blue-300 mb-4">About Us</h3>
+      <p class="text-lg text-gray-300">
+        Our mission is to curate memorable dining experiences. With over 10 years of experience in crafting gourmet burgers, we are passionate about bringing people together through food. Every dish we serve is made with care, creativity, and community in mind.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-300 text-center py-6 border-t border-gray-700">
+    <div class="mb-3">
+      <a href="https://www.facebook.com/" class="mx-3 hover:text-blue-400 transition">Facebook</a>
+      <a href="https://www.instagram.com/" class="mx-3 hover:text-blue-400 transition">Instagram</a>
+      <a href="https://x.com/" class="mx-3 hover:text-blue-400 transition">Twitter</a>
+    </div>
+    <p class="text-sm">Open Daily: 10am - 10pm</p>
+    <p class="text-xs mt-1">&copy; 2025 Burger Fantasy. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
