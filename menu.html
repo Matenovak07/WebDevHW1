@@ -6,11 +6,9 @@
   <title>Menu - Burger Fantasy</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
-    /* Mobile menu */
     .mobile-menu {
       display: none;
     }
-    
     @media (max-width: 768px) {
       .mobile-menu.active {
         display: flex;
@@ -23,16 +21,13 @@
         padding: 1rem;
         z-index: 40;
       }
-      
       .mobile-menu a {
         padding: 0.75rem;
         border-bottom: 1px solid rgba(255,255,255,0.1);
       }
-      
       .menu-item {
         min-height: 120px;
       }
-      
       .menu-grid {
         grid-template-columns: 1fr !important;
       }
@@ -45,24 +40,24 @@
   <header class="bg-gradient-to-r from-blue-700 to-indigo-800 shadow sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
       <div class="text-2xl font-bold tracking-wide">Burger Fantasy</div>
-      
-      <!-- Desktop Navigation -->
       <nav class="space-x-6 hidden md:flex text-sm">
         <a href="index.html" class="hover:text-blue-300 transition">Home</a>
         <a href="menu.html" class="text-blue-300 font-semibold">Menu</a>
         <a href="gallery.html" class="hover:text-blue-300 transition">Gallery</a>
         <a href="contact.html" class="hover:text-blue-300 transition">Contact & About</a>
       </nav>
-      
-      <!-- Hamburger Button-->
       <button class="md:hidden text-white focus:outline-none" id="menuButton" aria-label="Toggle menu">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
       </button>
+      <button class="ml-4 text-white focus:outline-none relative" id="cartButton">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-1.2 6M17 13l1.2 6M6 19a2 2 0 100 4 2 2 0 000-4zm12 0a2 2 0 100 4 2 2 0 000-4z" />
+        </svg>
+        <span id="cartCount" class="absolute top-0 right-0 bg-red-500 text-xs w-5 h-5 rounded-full flex items-center justify-center">0</span>
+      </button>
     </div>
-    
-    <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
       <a href="index.html" class="hover:text-blue-300 transition">Home</a>
       <a href="menu.html" class="text-blue-300 font-semibold">Menu</a>
@@ -77,57 +72,82 @@
       <h2 class="text-3xl md:text-4xl font-bold text-center text-blue-300 mb-8 md:mb-12">Our Menu</h2>
       <div class="menu-grid grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
         <!-- Menu Items -->
-        <div class="menu-item bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500">
-          <h3 class="text-xl font-semibold text-white mb-2">Grilled Salmon</h3>
-          <p class="text-blue-300 text-lg">$18.99</p>
-        </div>
-        <div class="menu-item bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500">
-          <h3 class="text-xl font-semibold text-white mb-2">Beef Burger</h3>
-          <p class="text-blue-300 text-lg">$12.49</p>
-        </div>
-        <div class="menu-item bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500">
-          <h3 class="text-xl font-semibold text-white mb-2">Caesar Salad</h3>
-          <p class="text-blue-300 text-lg">$9.99</p>
-        </div>
-        <div class="menu-item bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500">
-          <h3 class="text-xl font-semibold text-white mb-2">Spaghetti Carbonara</h3>
-          <p class="text-blue-300 text-lg">$14.99</p>
-        </div>
-        <div class="menu-item bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500">
-          <h3 class="text-xl font-semibold text-white mb-2">Chicken Tenders</h3>
-          <p class="text-blue-300 text-lg">$10.49</p>
-        </div>
-        <div class="menu-item bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500">
-          <h3 class="text-xl font-semibold text-white mb-2">Veggie Wrap</h3>
-          <p class="text-blue-300 text-lg">$8.99</p>
-        </div>
-        <div class="menu-item bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500">
-          <h3 class="text-xl font-semibold text-white mb-2">Double Cheeseburger</h3>
-          <p class="text-blue-300 text-lg">$13.99</p>
-        </div>
-        <div class="menu-item bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500">
-          <h3 class="text-xl font-semibold text-white mb-2">Bacon Avocado Burger</h3>
-          <p class="text-blue-300 text-lg">$14.49</p>
-        </div>
-        <div class="menu-item bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500">
-          <h3 class="text-xl font-semibold text-white mb-2">Loaded Fries</h3>
-          <p class="text-blue-300 text-lg">$6.99</p>
-        </div>
-        <div class="menu-item bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500">
-          <h3 class="text-xl font-semibold text-white mb-2">Onion Rings</h3>
-          <p class="text-blue-300 text-lg">$5.49</p>
-        </div>
-        <div class="menu-item bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500">
-          <h3 class="text-xl font-semibold text-white mb-2">Milkshake (Chocolate/Vanilla)</h3>
-          <p class="text-blue-300 text-lg">$4.99</p>
-        </div>
-        <div class="menu-item bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500">
-          <h3 class="text-xl font-semibold text-white mb-2">Classic Hot Dog</h3>
-          <p class="text-blue-300 text-lg">$7.49</p>
-        </div>
+        <div class="menu-item bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500 relative" data-name="Grilled Salmon" data-price="18.99">
+            <h3 class="text-xl font-semibold text-white mb-2">Grilled Salmon</h3>
+            <p class="text-blue-300 text-lg">$18.99</p>
+            <button class="absolute top-3 right-3 bg-blue-500 hover:bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center" title="Add item to cart">+</button>
+          </div>
+          <div class="menu-item bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500 relative" data-name="Beef Burger" data-price="12.49">
+            <h3 class="text-xl font-semibold text-white mb-2">Beef Burger</h3>
+            <p class="text-blue-300 text-lg">$12.49</p>
+            <button class="absolute top-3 right-3 bg-blue-500 hover:bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center" title="Add item to cart">+</button>
+          </div>
+          <div class="menu-item bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500 relative" data-name="Caesar Salad" data-price="9.99">
+            <h3 class="text-xl font-semibold text-white mb-2">Caesar Salad</h3>
+            <p class="text-blue-300 text-lg">$9.99</p>
+            <button class="absolute top-3 right-3 bg-blue-500 hover:bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center" title="Add item to cart">+</button>
+          </div>
+          <div class="menu-item bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500 relative" data-name="Spaghetti Carbonara" data-price="14.99">
+            <h3 class="text-xl font-semibold text-white mb-2">Spaghetti Carbonara</h3>
+            <p class="text-blue-300 text-lg">$14.99</p>
+            <button class="absolute top-3 right-3 bg-blue-500 hover:bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center" title="Add item to cart">+</button>
+          </div>
+        <div class="menu-item bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500 relative" data-name="Chicken Tenders" data-price="10.49">
+            <h3 class="text-xl font-semibold text-white mb-2">Chicken Tenders</h3>
+            <p class="text-blue-300 text-lg">$10.49</p>
+            <button class="absolute top-3 right-3 bg-blue-500 hover:bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center" title="Add item to cart">+</button>
+          </div>
+          <div class="menu-item bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500 relative" data-name="Veggie Wrap" data-price="8.99">
+            <h3 class="text-xl font-semibold text-white mb-2">Veggie Wrap</h3>
+            <p class="text-blue-300 text-lg">$8.99</p>
+            <button class="absolute top-3 right-3 bg-blue-500 hover:bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center" title="Add item to cart">+</button>
+          </div>
+          <div class="menu-item bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500 relative" data-name="Double Cheeseburger" data-price="13.99">
+            <h3 class="text-xl font-semibold text-white mb-2">Double Cheeseburger</h3>
+            <p class="text-blue-300 text-lg">$13.99</p>
+            <button class="absolute top-3 right-3 bg-blue-500 hover:bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center" title="Add item to cart">+</button>
+          </div>
+          <div class="menu-item bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500 relative" data-name="Bacon Avocado Burger" data-price="14.49">
+            <h3 class="text-xl font-semibold text-white mb-2">Bacon Avocado Burger</h3>
+            <p class="text-blue-300 text-lg">$14.49</p>
+            <button class="absolute top-3 right-3 bg-blue-500 hover:bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center" title="Add item to cart">+</button>
+          </div>
+          <div class="menu-item bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500 relative" data-name="Loaded Fries" data-price="6.99">
+            <h3 class="text-xl font-semibold text-white mb-2">Loaded Fries</h3>
+            <p class="text-blue-300 text-lg">$6.99</p>
+            <button class="absolute top-3 right-3 bg-blue-500 hover:bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center" title="Add item to cart">+</button>
+          </div>
+          <div class="menu-item bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500 relative" data-name="Onion Rings" data-price="5.49">
+            <h3 class="text-xl font-semibold text-white mb-2">Onion Rings</h3>
+            <p class="text-blue-300 text-lg">$5.49</p>
+            <button class="absolute top-3 right-3 bg-blue-500 hover:bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center" title="Add item to cart">+</button>
+          </div>
+          <div class="menu-item bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500 relative" data-name="Milkshake (Chocolate/Vanilla)" data-price="4.99">
+            <h3 class="text-xl font-semibold text-white mb-2">Milkshake (Chocolate/Vanilla)</h3>
+            <p class="text-blue-300 text-lg">$4.99</p>
+            <button class="absolute top-3 right-3 bg-blue-500 hover:bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center" title="Add item to cart">+</button>
+          </div>
+          <div class="menu-item bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl shadow-lg border border-blue-500 relative" data-name="Classic Hot Dog" data-price="7.49">
+            <h3 class="text-xl font-semibold text-white mb-2">Classic Hot Dog</h3>
+            <p class="text-blue-300 text-lg">$7.49</p>
+            <button class="absolute top-3 right-3 bg-blue-500 hover:bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center" title="Add item to cart">+</button>
+          </div>
       </div>
     </div>
   </section>
+
+  <!-- Shopping Cart Sidebar -->
+  <div id="cartSidebar" class="fixed top-0 right-0 w-80 h-full bg-gray-800 text-white shadow-lg transform translate-x-full transition-transform duration-300 z-50">
+    <div class="flex justify-between items-center p-4 border-b border-gray-600">
+      <h3 class="text-lg font-bold">Shopping Cart</h3>
+      <button id="closeCart" class="text-xl">&times;</button>
+    </div>
+    <div id="cartItems" class="p-4 space-y-2"></div>
+    <div class="p-4 border-t border-gray-600">
+      <p class="mb-2">Total: $<span id="totalPrice">0.00</span></p>
+      <button id="clearCart" class="bg-red-500 px-4 py-2 rounded w-full">Clear Cart</button>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="bg-gray-800 text-gray-300 text-center py-6 border-t border-gray-700">
@@ -140,19 +160,81 @@
     <p class="text-xs mt-1">&copy; 2025 Burger Fantasy. All rights reserved.</p>
   </footer>
 
-  <!-- Mobile Menu Script -->
+  <!-- Scripts -->
   <script>
     const menuButton = document.getElementById('menuButton');
     const mobileMenu = document.getElementById('mobileMenu');
-    
-    menuButton.addEventListener('click', () => {
-      mobileMenu.classList.toggle('active');
-    });
+    menuButton.addEventListener('click', () => mobileMenu.classList.toggle('active'));
     
     document.querySelectorAll('.mobile-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('active');
+      link.addEventListener('click', () => mobileMenu.classList.remove('active'));
+    });
+
+    // Shopping Cart Logic
+    const cartButton = document.getElementById('cartButton');
+    const cartSidebar = document.getElementById('cartSidebar');
+    const closeCart = document.getElementById('closeCart');
+    const cartItems = document.getElementById('cartItems');
+    const totalPrice = document.getElementById('totalPrice');
+    const clearCart = document.getElementById('clearCart');
+    const cartCount = document.getElementById('cartCount');
+
+    let cart = {};
+
+    document.querySelectorAll('.menu-item button').forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const parent = button.closest('.menu-item');
+        const name = parent.dataset.name;
+        const price = parseFloat(parent.dataset.price);
+        if (cart[name]) {
+          cart[name].quantity += 1;
+        } else {
+          cart[name] = { price, quantity: 1 };
+        }
+        updateCart();
       });
+    });
+
+    function updateCart() {
+      cartItems.innerHTML = '';
+      let total = 0;
+      let count = 0;
+      for (let name in cart) {
+        const item = cart[name];
+        total += item.price * item.quantity;
+        count += item.quantity;
+        const div = document.createElement('div');
+        div.classList.add('flex', 'justify-between', 'items-center');
+        div.innerHTML = `<div>${name} (x${item.quantity})</div>
+                          <div>
+                            $${(item.price * item.quantity).toFixed(2)}
+                            <button class="ml-2 text-red-400" onclick="removeItem('${name}')">&times;</button>
+                          </div>`;
+        cartItems.appendChild(div);
+      }
+      totalPrice.textContent = total.toFixed(2);
+      cartCount.textContent = count;
+    }
+
+    function removeItem(name) {
+      if (cart[name]) {
+        cart[name].quantity -= 1;
+        if (cart[name].quantity <= 0) delete cart[name];
+        updateCart();
+      }
+    }
+
+    clearCart.addEventListener('click', () => {
+      cart = {};
+      updateCart();
+    });
+
+    cartButton.addEventListener('click', () => {
+      cartSidebar.classList.remove('translate-x-full');
+    });
+    closeCart.addEventListener('click', () => {
+      cartSidebar.classList.add('translate-x-full');
     });
   </script>
 </body>
